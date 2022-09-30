@@ -9,17 +9,26 @@
     border-radius: 5px;
     display: inline-block;
     padding: 0 4px;
-    width: 150px;
+    width: 160px;
     text-align: center;
+    position: relative;
+}
+
+.title span {
+    position: absolute;
+    right: 5px;
 }
 
 .menu {
     border: 1px black solid;
     border-radius: 5px;
-    padding: 0 4px;
     margin-top: 2px;
-    width: 150px;
+    width: 168px;
     position: absolute;
     background-color: powderblue;
     text-align: center;
+}
+
+.active:hover {
+    background-color: #00a8b2;
 }

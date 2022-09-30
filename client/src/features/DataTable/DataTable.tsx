@@ -17,7 +17,7 @@ export const DataTable = () => {
         <div className={styles.dataTable}>
             <table>
                 <tr>
-                    <th>Data</th>
+                    <th>Date</th>
                     <th>Title</th>
                     <th>Quantity</th>
                     <th>Distance</th>

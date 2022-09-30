@@ -9,7 +9,7 @@ const initialState = {
     pageCount: 0 as number
 }
 
-export const dateReducer = (state = initialState, action: DataActionType): InitialStateType => {
+export const dateReducer = (state = initialState, action: DataActionType): InitialStateDateType => {
     switch (action.type) {
         case 'DATA/GET-DATA-TABLE':
             return {...action.data}
@@ -34,5 +34,5 @@ export const getDataTableTC = (): AppThunk => async (dispatch) => {
 }
 
 // types
-export type InitialStateType = typeof initialState
+export type InitialStateDateType = typeof initialState
 export type DataActionType = ReturnType<typeof getDataTableAC>

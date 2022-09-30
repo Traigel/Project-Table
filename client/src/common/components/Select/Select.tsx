@@ -1,45 +1,48 @@
 import React, {useState} from 'react';
 import styles from './Select.module.css'
+import {ValueSortType} from "../../../features/Sorting/sorting-reducer";
 
 type SelectPropsType = {
-    title: string
-    array: string[]
+    title: ValueSortType
+    array: ValueSortType[]
+    callBack: (title: ValueSortType) => void
 }
 
 export const Select = (props: SelectPropsType) => {
 
-    const [collapsed, setCollapsed] = useState<boolean>(false)
-    const [title, setTitle] = useState<string>('')
+    const [visibility, setVisibility] = useState<boolean>(false)
 
-    const collapsedHandler = () => {
-        setCollapsed(!collapsed)
+    const visibilityHandler = () => {
+        setVisibility(!visibility)
     }
 
-    const menuHandler = (title: string) => {
-        setTitle(title)
-        collapsedHandler()
+    const menuHandler = (title: ValueSortType) => {
+        props.callBack(title)
+        visibilityHandler()
     }
 
     return (
         <div className={styles.selectBlock}>
             <div
-                onClick={collapsedHandler}
+                onClick={visibilityHandler}
                 className={styles.title}
-            >{title ? title : props.title} &#8659;</div>
-            {collapsed
+            >
+                {props.title} {visibility ? <span>&#215;</span> : <span>&#8659;</span>}
+            </div>
+            {visibility
                 ? <div className={styles.menu}>
                     {props.array.map((el, index) => {
                         return (
                             <div
                                 key={index}
                                 onClick={() => menuHandler(el)}
+                                className={styles.active}
                             >{el}</div>
                         )
                     })}
                 </div>
                 : <div></div>
             }
-
         </div>
     )
 }
