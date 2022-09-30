@@ -22,16 +22,9 @@ function App() {
     const [data, setData] = useState<DateType[]>([])
 
     const getData = () => {
-        axios.get<DataResponseType>('http://localhost:5000/')
+        axios.get<DataResponseType>('http://localhost:5000/data')
             .then(res => {
                 setData(res.data.arrData)
-            })
-    }
-
-    const addDateHandler = () => {
-        axios.post('http://localhost:5000/')
-            .then(res => {
-                getData()
             })
     }
 
@@ -43,7 +36,6 @@ function App() {
 
         <div className="App">
             {data.map(el => <div key={el.id}><span>{el.date}, {el.title}, {el.quantity}</span></div>)}
-            <button onClick={addDateHandler}>add data</button>
         </div>
     );
 }
