@@ -12,6 +12,7 @@
     width: 160px;
     text-align: center;
     position: relative;
+    background-color: bisque;
 }
 
 .title span {
@@ -25,7 +26,7 @@
     margin-top: 2px;
     width: 168px;
     position: absolute;
-    background-color: powderblue;
+    background-color: bisque;
     text-align: center;
 }
 

@@ -1,4 +1,4 @@
-import {dateReducer, getDataTableAC, InitialStateDateType} from "./data-reducer";
+import {dataReducer, getDataTableAC, InitialStateDateType} from "./data-reducer";
 
 let state: InitialStateDateType
 let getState: InitialStateDateType
@@ -26,7 +26,7 @@ beforeEach(() => {
 })
 
 test('get data table', () => {
-    const dateReducerTest = dateReducer(state, getDataTableAC(getState))
+    const dateReducerTest = dataReducer(state, getDataTableAC(getState))
     expect(dateReducerTest.arrData.length).toBe(6)
     expect(dateReducerTest.pageCount).toBe(3)
 })

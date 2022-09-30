@@ -3,3 +3,7 @@
     display: flex;
     justify-content: space-around;
 }
+
+input {
+    height: 18px;
+}

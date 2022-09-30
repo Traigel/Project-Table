@@ -51,6 +51,7 @@ export const Sorting = () => {
             <input
                 value={valueInput}
                 onChange={onChangeValueHandler}
+                placeholder={'Search'}
             />
             <button
                 disabled={disabled}

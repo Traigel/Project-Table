@@ -1,10 +1,10 @@
 import {applyMiddleware, combineReducers, legacy_createStore} from "redux";
 import thunk from "redux-thunk";
-import {dateReducer} from "../features/DataTable/data-reducer";
+import {dataReducer} from "../features/DataTable/data-reducer";
 import {sortingReducer} from "../features/Sorting/sorting-reducer";
 
 const rootReducer = combineReducers({
-    data: dateReducer,
+    data: dataReducer,
     sort: sortingReducer
 })
 

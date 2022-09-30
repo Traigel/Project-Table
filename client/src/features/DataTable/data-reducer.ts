@@ -9,7 +9,7 @@ const initialState = {
     pageCount: 0 as number
 }
 
-export const dateReducer = (state = initialState, action: DataActionType): InitialStateDateType => {
+export const dataReducer = (state = initialState, action: DataActionType): InitialStateDateType => {
     switch (action.type) {
         case 'DATA/GET-DATA-TABLE':
             return {...action.data}
