@@ -1,0 +1,19 @@
+.dataTable {
+    display: inline-block;
+}
+
+table {
+    border: 1px black solid;
+    width:800px;
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    background: #b0e0e6;
+}

@@ -1,0 +1,25 @@
+.selectBlock {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.title {
+    border: 1px black solid;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0 4px;
+    width: 150px;
+    text-align: center;
+}
+
+.menu {
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 0 4px;
+    margin-top: 2px;
+    width: 150px;
+    position: absolute;
+    background-color: powderblue;
+    text-align: center;
+}

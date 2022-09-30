@@ -1,5 +1,4 @@
 import {dateReducer, getDataTableAC, InitialStateType} from "./data-reducer";
-import {DataType} from "../../api/api";
 
 let state: InitialStateType
 let getState: InitialStateType
