@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect} from 'react';
 import styles from "./Sorting.module.css"
 import {Select} from "../../common/components/Select/Select";
 import {useAppDispatch} from "../../common/hooks/useAppDispatch";
@@ -7,7 +7,9 @@ import {
     resetSettingsAC,
     setValueColumnAC,
     setValueConditionAC,
-    setValueInputAC, ValueColumnType, ValueConditionType,
+    setValueInputAC,
+    ValueColumnType,
+    ValueConditionType,
 } from "./sorting-reducer";
 import {useDebounce} from "../../common/hooks/useDebounce";
 import {getDataTableTC} from "../DataTable/data-reducer";

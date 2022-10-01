@@ -5,7 +5,7 @@
     {"id": 4, "date": "10.01.2022", "title": "basket", "quantity": 61, "distance": 345},
     {"id": 5, "date": "29.08.2022", "title": "pen", "quantity": 76, "distance": 55},
     {"id": 6, "date": "01.05.2022", "title": "notebook", "quantity": 37, "distance": 15},
-    {"id": 7, "date": "20.09.2022", "title": "hockey stick", "quantity": 34, "distance": 100},
+    {"id": 7, "date": "20.09.2022", "title": "stick", "quantity": 34, "distance": 100},
     {"id": 8, "date": "22.06.2022", "title": "grid", "quantity": 150, "distance": 50},
     {"id": 9, "date": "05.12.2021", "title": "laces", "quantity": 10, "distance": 35},
     {"id": 10, "date": "10.01.2022", "title": "basket", "quantity": 61, "distance": 345},
@@ -16,7 +16,10 @@
     {"id": 15, "date": "07.09.2022", "title": "mask", "quantity": 90, "distance": 169},
     {"id": 16, "date": "12.07.2022", "title": "pen", "quantity": 41, "distance": 85},
     {"id": 17, "date": "03.09.2022", "title": "notebook", "quantity": 15, "distance": 91},
-    {"id": 18, "date": "09.29.2022", "title": "felt-tip pen", "quantity": 88, "distance": 11},
+    {"id": 18, "date": "09.29.2022", "title": "ribbon", "quantity": 88, "distance": 11},
     {"id": 19, "date": "10.06.2022", "title": "keys", "quantity": 47, "distance": 5},
-    {"id": 20, "date": "04.18.2022", "title": "glasses", "quantity": 31, "distance": 79}
+    {"id": 20, "date": "04.18.2022", "title": "glasses", "quantity": 31, "distance": 79},
+    {"id": 21, "date": "07.16.2022", "title": "hat", "quantity": 122, "distance": 32},
+    {"id": 22, "date": "02.08.2022", "title": "computer", "quantity": 5, "distance": 20},
+    {"id": 23, "date": "06.18.2022", "title": "keyboard", "quantity": 20, "distance": 5}
 ]

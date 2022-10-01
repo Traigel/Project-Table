@@ -27,7 +27,14 @@ router.get('/', async (req, res) => {
             arrData = arrData.filter(el => el[column] < search)
         }
         if (condition === 'contains') {
-            arrData = arrData.filter(el => el[column].indexOf(search) > -1)
+            if (column === 'title') {
+                arrData = arrData.filter(el => el[column].indexOf(search) > -1)
+            } else {
+                arrData = arrData.filter(el => {
+                    let number = JSON.stringify(el[column])
+                    return number.indexOf(search) > -1;
+                });
+            }
         }
         totalCountData = arrData.length
     }
