@@ -17,7 +17,7 @@ beforeEach(() => {
     }
     resState = {
         valueColumn: 'Distance',
-        valueCondition: 'Less <',
+        valueCondition: 'Less',
         valueInput: 'Hello'
     }
 })
@@ -27,7 +27,7 @@ test('set value column', () => {
     expect(dateReducerTest.valueColumn).toBe('Title')
 })
 test('set value condition', () => {
-    const dateReducerTest = sortingReducer(state, setValueConditionAC('More >'))
+    const dateReducerTest = sortingReducer(state, setValueConditionAC('More'))
     expect(dateReducerTest.valueCondition).toBe('More >')
 })
 test('set value input', () => {

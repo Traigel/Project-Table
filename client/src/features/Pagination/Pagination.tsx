@@ -10,14 +10,40 @@ export const Pagination = () => {
     const totalCountData = useAppSelector(state => state.data.totalCountData)
     const page = useAppSelector(state => state.data.page)
     const pageCount = useAppSelector(state => state.data.pageCount)
+    const valueColumn = useAppSelector(state => state.sort.valueColumn)
+    const valueCondition = useAppSelector(state => state.sort.valueCondition)
+    const valueInput = useAppSelector(state => state.sort.valueInput)
+    const status = useAppSelector(state => state.app.status)
     const dispatch = useAppDispatch()
 
-    const onClickPageHandler = (page: number) => {
-        dispatch(getDataTableTC({page, pageCount}))
+    const onClickPageHandler = (pageValue: number) => {
+        if (status === 'succeeded') {
+            if (valueInput !== '') {
+                dispatch(getDataTableTC({
+                    page: pageValue,
+                    pageCount,
+                    search: valueInput,
+                    column: valueColumn,
+                    condition: valueCondition
+                }))
+            } else {
+                dispatch(getDataTableTC({page: pageValue, pageCount}))
+            }
+        }
     }
 
-    const callBackSelectHandler = (pageCount: number) => {
-        dispatch(getDataTableTC({page: 1, pageCount: pageCount}))
+    const callBackSelectHandler = (pageCountValue: number) => {
+        if (valueInput !== '') {
+            dispatch(getDataTableTC({
+                page: 1,
+                pageCount: pageCountValue,
+                search: valueInput,
+                column: valueColumn,
+                condition: valueCondition
+            }))
+        } else {
+            dispatch(getDataTableTC({page: 1, pageCount: pageCountValue}))
+        }
     }
 
     const pagesCount = Math.ceil(totalCountData / pageCount)

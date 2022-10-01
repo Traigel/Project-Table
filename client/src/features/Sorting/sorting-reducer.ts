@@ -41,4 +41,4 @@ export type SortActionType =
     | ReturnType<typeof setValueInputAC>
     | ReturnType<typeof resetSettingsAC>
 export type ValueColumnType = 'Column selection' | 'Title' | 'Quantity' | 'Distance'
-export type ValueConditionType = 'Condition selection' | 'Equals =' | 'Contains...' | 'More >' | 'Less <'
+export type ValueConditionType = 'Condition selection' | 'Equals' | 'Contains' | 'More' | 'Less'

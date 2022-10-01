@@ -13,7 +13,13 @@ const initialState = {
 export const dataReducer = (state = initialState, action: DataActionType): InitialStateDateType => {
     switch (action.type) {
         case 'DATA/GET-DATA-TABLE':
-            return {...action.data}
+            return {
+                ...state,
+                arrData: action.data.arrData,
+                totalCountData: action.data.totalCountData,
+                page: action.data.page,
+                pageCount: action.data.pageCount
+            }
         default:
             return state
     }
@@ -27,8 +33,6 @@ export const getDataTableAC = (data: ResponseType) => {
 // thunks
 export const getDataTableTC = (data: SortType): AppThunk => async (dispatch, getState: () => AppRootStateType) => {
     dispatch(setAppStatusAC('loading'))
-    // const page = getState().data.page
-    // const pageCount = getState().data.pageCount
     try {
         const res = await dataApi.getData(data)
         dispatch(getDataTableAC(res.data))

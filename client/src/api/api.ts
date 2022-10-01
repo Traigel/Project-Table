@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {ValueColumnType, ValueConditionType} from "../features/Sorting/sorting-reducer";
 
 const instance = axios.create({
     baseURL: 'http://localhost:5000'
@@ -8,7 +9,15 @@ const instance = axios.create({
 export const dataApi = {
     getData(data: SortType) {
         if (data.search) {
-
+            return instance.get<ResponseType>('/data', {
+                params: {
+                    page: data.page,
+                    pageCount: data.pageCount,
+                    search: data.search,
+                    column: data.column,
+                    condition: data.condition
+                }
+            })
         }
         return instance.get<ResponseType>('/data', {
             params: {
@@ -39,9 +48,6 @@ export type SortType = {
     page: number
     pageCount: number
     search?: string
-    column?: ColumnSort
-    condition?: ConditionSort
+    column?: ValueColumnType
+    condition?: ValueConditionType
 }
-
-export type ColumnSort = 'title' | 'quantity' | 'distance'
-export type ConditionSort = 'equals' | 'contains' | 'more' | 'less'

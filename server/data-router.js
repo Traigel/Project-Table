@@ -15,19 +15,19 @@ router.get('/', async (req, res) => {
     let pageCount = 5
     if (!!req.query.search && !!req.query.column && !!req.query.condition) {
         const search = req.query.search.toLowerCase()
-        const column = req.query.column
-        const condition = req.query.condition
+        const column = req.query.column.toLowerCase()
+        const condition = req.query.condition.toLowerCase()
         if (condition === 'equals') {
             arrData = arrData.filter(el => el[column] == search)
-        }
-        if (condition === 'contains') {
-            arrData = arrData.filter(el => el[column].indexOf(search) > -1)
         }
         if (condition === 'more') {
             arrData = arrData.filter(el => el[column] > search)
         }
         if (condition === 'less') {
             arrData = arrData.filter(el => el[column] < search)
+        }
+        if (condition === 'contains') {
+            arrData = arrData.filter(el => el[column].indexOf(search) > -1)
         }
         totalCountData = arrData.length
     }
@@ -46,7 +46,7 @@ router.get('/', async (req, res) => {
         arrData,
         totalCountData,
         page,
-        pageCount
+        pageCount,
     }
     res.send(data)
 })
