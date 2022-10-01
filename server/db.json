@@ -11,12 +11,12 @@
     {"id": 10, "date": "10.01.2022", "title": "basket", "quantity": 61, "distance": 345},
     {"id": 11, "date": "29.08.2022", "title": "washer", "quantity": 76, "distance": 55},
     {"id": 12, "date": "01.05.2022", "title": "bit", "quantity": 37, "distance": 15},
-    {"id": 13, "date": "01.05.2022", "title": "bike", "quantity": 12, "distance": 19},
-    {"id": 14, "date": "01.05.2022", "title": "chain", "quantity": 55, "distance": 47},
-    {"id": 15, "date": "01.05.2022", "title": "mask", "quantity": 90, "distance": 169},
-    {"id": 16, "date": "29.08.2022", "title": "pen", "quantity": 41, "distance": 85},
-    {"id": 17, "date": "01.05.2022", "title": "notebook", "quantity": 15, "distance": 91},
-    {"id": 18, "date": "01.05.2022", "title": "felt-tip pen", "quantity": 88, "distance": 11},
-    {"id": 19, "date": "01.05.2022", "title": "keys", "quantity": 47, "distance": 5},
-    {"id": 20, "date": "01.05.2022", "title": "glasses", "quantity": 31, "distance": 79}
+    {"id": 13, "date": "07.07.2022", "title": "bike", "quantity": 12, "distance": 19},
+    {"id": 14, "date": "11.15.2022", "title": "chain", "quantity": 55, "distance": 47},
+    {"id": 15, "date": "07.09.2022", "title": "mask", "quantity": 90, "distance": 169},
+    {"id": 16, "date": "12.07.2022", "title": "pen", "quantity": 41, "distance": 85},
+    {"id": 17, "date": "03.09.2022", "title": "notebook", "quantity": 15, "distance": 91},
+    {"id": 18, "date": "09.29.2022", "title": "felt-tip pen", "quantity": 88, "distance": 11},
+    {"id": 19, "date": "10.06.2022", "title": "keys", "quantity": 47, "distance": 5},
+    {"id": 20, "date": "04.18.2022", "title": "glasses", "quantity": 31, "distance": 79}
 ]

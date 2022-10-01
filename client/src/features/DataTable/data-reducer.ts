@@ -1,6 +1,7 @@
 import {dataApi, DataType, ResponseType} from "../../api/api";
 import {AppThunk} from "../../common/types/types";
 import {errorHandlerUtil} from "../../common/utils/errors-utils";
+import {setAppStatusAC} from "../../app/app-reducer";
 
 const initialState = {
     arrData: [] as DataType[],
@@ -25,11 +26,14 @@ export const getDataTableAC = (data: ResponseType) => {
 
 // thunks
 export const getDataTableTC = (): AppThunk => async (dispatch) => {
+    dispatch(setAppStatusAC('loading'))
     try {
         const res = await dataApi.getData()
         dispatch(getDataTableAC(res.data))
     } catch (e) {
         errorHandlerUtil(e, dispatch)
+    } finally {
+        dispatch(setAppStatusAC('succeeded'))
     }
 }
 

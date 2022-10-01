@@ -1,0 +1,11 @@
+.preloader {
+    position: fixed;
+    top: 155px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.preloader img {
+    width: 110px;
+}
