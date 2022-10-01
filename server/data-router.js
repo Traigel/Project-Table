@@ -10,6 +10,9 @@ router.use((req, res, next) => {
 
 router.get('/', async (req, res) => {
     let arrData = await getData()
+    let totalCountData = arrData.length
+    let page = 1
+    let pageCount = 5
     if (!!req.query.search && !!req.query.column && !!req.query.condition) {
         const search = req.query.search.toLowerCase()
         const column = req.query.column
@@ -26,13 +29,24 @@ router.get('/', async (req, res) => {
         if (condition === 'less') {
             arrData = arrData.filter(el => el[column] < search)
         }
+        totalCountData = arrData.length
     }
-    // arrData = arrData.filter((el, index) => index < 5)
+    if (!!req.query.page) {
+        page = JSON.parse(req.query.page)
+    }
+    if (!!req.query.pageCount) {
+        pageCount = JSON.parse(req.query.pageCount)
+    }
+
+    const indexMin = (page - 1) * pageCount
+    const indexMax = indexMin + pageCount
+    arrData = arrData.slice([indexMin], [indexMax])
+
     const data = {
         arrData,
-        totalCountData: arrData.length,
-        page: 1,
-        pageCount: 5
+        totalCountData,
+        page,
+        pageCount
     }
     res.send(data)
 })
