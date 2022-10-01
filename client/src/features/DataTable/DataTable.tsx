@@ -15,20 +15,27 @@ export const DataTable = () => {
 
     return (
         <div className={styles.dataTable}>
-            <table>
-                <tr>
-                    <th>Date</th>
-                    <th>Title</th>
-                    <th>Quantity</th>
-                    <th>Distance</th>
-                </tr>
-                {arrData.map(el => <tr key={el.id}>
-                    <td>{el.date}</td>
-                    <td>{el.title}</td>
-                    <td>{el.quantity}</td>
-                    <td>{el.distance}</td>
-                </tr>)}
-            </table>
+            {arrData.length === 0
+                ?
+                <h2 className={styles.notFound}>
+                    Nothing was found according to your request.
+                </h2>
+                :
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Title</th>
+                        <th>Quantity</th>
+                        <th>Distance</th>
+                    </tr>
+                    {arrData.map(el => <tr key={el.id}>
+                        <td>{el.date}</td>
+                        <td>{el.title}</td>
+                        <td>{el.quantity}</td>
+                        <td>{el.distance}</td>
+                    </tr>)}
+                </table>
+            }
         </div>
     )
 }

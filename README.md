@@ -1,8 +1,10 @@
 # Project-Table
 
+Table with data. The data comes from the server. Processed on the client and displayed to the user.
+
 ---
 
-## Server doc
+## Server Documentation
 
 ### Request:
 

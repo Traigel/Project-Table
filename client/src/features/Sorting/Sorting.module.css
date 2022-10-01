@@ -7,3 +7,11 @@
 input {
     height: 18px;
 }
+
+.button {
+    cursor: pointer;
+}
+
+.disabled {
+    cursor: not-allowed;
+}

@@ -71,12 +71,15 @@ export const Sorting = () => {
             <input
                 value={valueInput}
                 onChange={onChangeValueHandler}
+                placeholder={'Search'}
+                className={disabledInput ? styles.disabled : ''}
                 disabled={disabledInput}
                 type={typeInput}
             />
             <button
                 disabled={disabledButton}
                 onClick={resetSettingsHandler}
+                className={`${styles.button} ${disabledButton ? styles.disabled : ''}`}
             >Reset settings
             </button>
         </div>

@@ -54,24 +54,28 @@ export const Pagination = () => {
 
     return (
         <div className={styles.pagination}>
-            {pages.map((el, index) => {
-                return (
-                    <span
-                        key={index}
-                        className={el === page ? styles.active : ''}
-                        onClick={() => onClickPageHandler(el)}
-                    >
+            {pagesCount !== 0 &&
+                <div>
+                    {pages.map((el, index) => {
+                        return (
+                            <span
+                                key={index}
+                                className={el === page ? styles.active : ''}
+                                onClick={() => onClickPageHandler(el)}
+                            >
                         {el}
                     </span>
-                )
-            })}
-            <Select
-                title={pageCount}
-                array={[5, 10, 20]}
-                callBack={callBackSelectHandler}
-                classNameTitle={styles.title}
-                classNameMenu={styles.menu}
-            />
+                        )
+                    })}
+                    <Select
+                        title={pageCount}
+                        array={[5, 10, 20]}
+                        callBack={callBackSelectHandler}
+                        classNameTitle={styles.title}
+                        classNameMenu={styles.menu}
+                    />
+                </div>
+            }
         </div>
     )
 }

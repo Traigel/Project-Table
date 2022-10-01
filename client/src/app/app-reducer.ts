@@ -1,5 +1,5 @@
 const initialState = {
-    status: "loading" as RequestStatusType
+    status: "start" as RequestStatusType
 }
 
 export const appReducer = (state = initialState, action: AppActionType): InitialStateAppType => {
@@ -19,4 +19,4 @@ export const setAppStatusAC = (status: RequestStatusType) => {
 // types
 export type InitialStateAppType = typeof initialState
 export type AppActionType = ReturnType<typeof setAppStatusAC>
-export type RequestStatusType = 'succeeded' | 'loading'
+export type RequestStatusType = 'start' | 'succeeded' | 'loading'
