@@ -1,7 +1,41 @@
 # Project-Table
 
 ---
-— github commits —
+
+## Server doc
+
+### Request:
+
+`GET` /data
+
+- `&page=1` default value 1 / not necessary
+- `&pageCount=5` default value 5 / not necessary
+- `&search=name` value search / not necessary
+- `&column=title` search column / type [title, quantity, distance] / not necessary
+- `&condition=equals` search condition / type [equals, contains, more, less] / not necessary
+
+### Response:
+
+```ts
+type ResponseType = {
+    arrData: DataType[]
+    totalCountData: number // amount of elements
+    page: number // selected page
+    pageCount: number // number of elements per page
+}
+
+type DataType = {
+    id: number
+    date: string
+    title: string
+    quantity: number
+    distance: number
+}
+```
+
+---
+
+## GitHub commits
 
 type: description
 
