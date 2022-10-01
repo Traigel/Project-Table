@@ -1,36 +1,22 @@
-const http = require('http');
-const {dataController} = require('./dataController')
+const express = require('express')
+const data = require('./data-router')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
+const app = express()
 const PORT = 5000;
 
-process.on('unhandledRejection', (reason, p) => {
-    console.log(reason, p)
-});
+app.use(cors())
 
-const cors = (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Request-Method', '*');
-    res.setHeader('Access-Control-Allow-Method', 'OPTIONS, GET');
-    res.setHeader('Access-Control-Allow-Header', '*');
-    if (req.method === 'OPTIONS') {
-        res.writeHead(200);
-        res.end();
-        return true
-    }
-    return false
-};
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
-const server = http.createServer((req, res) => {
-    if (cors(req, res)) return
-    switch (req.url) {
-        case '/data':
-            dataController(req, res)
-            break;
-        default:
-            res.write(`PAGE NOT FOUND`);
-    }
+app.use('/data', data)
+
+app.use((req, res) => {
+    res.send(404);
 })
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)
 })

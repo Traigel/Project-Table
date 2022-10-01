@@ -4,9 +4,9 @@ import {errorHandlerUtil} from "../../common/utils/errors-utils";
 
 const initialState = {
     arrData: [] as DataType[],
-    totalCountData: 0 as number,
-    page: 0 as number,
-    pageCount: 0 as number
+    totalCountData: 0,
+    page: 0,
+    pageCount: 0
 }
 
 export const dataReducer = (state = initialState, action: DataActionType): InitialStateDateType => {
