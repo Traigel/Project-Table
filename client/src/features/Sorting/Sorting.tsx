@@ -7,8 +7,7 @@ import {
     resetSettingsAC,
     setValueColumnAC,
     setValueConditionAC,
-    setValueInputAC,
-    ValueSortType
+    setValueInputAC, ValueColumnType, ValueConditionType,
 } from "./sorting-reducer";
 
 export const Sorting = () => {
@@ -18,11 +17,11 @@ export const Sorting = () => {
     const valueInput = useAppSelector(state => state.sort.valueInput)
     const dispatch = useAppDispatch()
 
-    const setValueColumnHandler = (value: ValueSortType) => {
+    const setValueColumnHandler = (value: ValueColumnType) => {
         dispatch(setValueColumnAC(value))
     }
 
-    const setValueConditionHandler = (value: ValueSortType) => {
+    const setValueConditionHandler = (value: ValueConditionType) => {
         dispatch(setValueConditionAC(value))
     }
 
@@ -34,7 +33,7 @@ export const Sorting = () => {
         dispatch(resetSettingsAC())
     }
 
-    const disabled = !valueInput || (valueColumn == 'Column selection') || (valueColumn == 'Condition selection') ? true : false
+    const disabled = !valueInput || (valueColumn == 'Column selection') || (valueCondition == 'Condition selection')
 
     return (
         <div className={styles.sorting}>
@@ -51,7 +50,6 @@ export const Sorting = () => {
             <input
                 value={valueInput}
                 onChange={onChangeValueHandler}
-                placeholder={'Search'}
             />
             <button
                 disabled={disabled}

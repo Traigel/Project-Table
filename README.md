@@ -10,6 +10,9 @@
 
 - `&page=1` default value 1 / not necessary
 - `&pageCount=5` default value 5 / not necessary
+
+Filters only if all three arguments are passed:
+
 - `&search=name` value search / not necessary
 - `&column=title` search column / type [title, quantity, distance] / not necessary
 - `&condition=equals` search condition / type [equals, contains, more, less] / not necessary

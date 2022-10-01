@@ -10,7 +10,7 @@ export const DataTable = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(getDataTableTC())
+        dispatch(getDataTableTC({page: 1, pageCount: 5}))
     }, [])
 
     return (

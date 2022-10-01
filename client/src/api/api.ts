@@ -6,8 +6,16 @@ const instance = axios.create({
 
 // api
 export const dataApi = {
-    getData() {
-        return instance.get<ResponseType>('/data')
+    getData(data: SortType) {
+        if (data.search) {
+
+        }
+        return instance.get<ResponseType>('/data', {
+            params: {
+                page: data.page,
+                pageCount: data.pageCount
+            }
+        })
     }
 }
 
@@ -26,3 +34,14 @@ export type DataType = {
     quantity: number,
     distance: number
 }
+
+export type SortType = {
+    page: number
+    pageCount: number
+    search?: string
+    column?: ColumnSort
+    condition?: ConditionSort
+}
+
+export type ColumnSort = 'title' | 'quantity' | 'distance'
+export type ConditionSort = 'equals' | 'contains' | 'more' | 'less'

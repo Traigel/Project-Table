@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import styles from './Select.module.css'
-import {ValueSortType} from "../../../features/Sorting/sorting-reducer";
 
 type SelectPropsType = {
-    title: ValueSortType
-    array: ValueSortType[]
-    callBack: (title: ValueSortType) => void
+    title: any
+    array: any[]
+    callBack: (title: any) => void
+    classNameTitle?: string
+    classNameMenu?: string
 }
 
 export const Select = (props: SelectPropsType) => {
@@ -16,7 +17,7 @@ export const Select = (props: SelectPropsType) => {
         setVisibility(!visibility)
     }
 
-    const menuHandler = (title: ValueSortType) => {
+    const menuHandler = (title: any) => {
         props.callBack(title)
         visibilityHandler()
     }
@@ -25,12 +26,12 @@ export const Select = (props: SelectPropsType) => {
         <div className={styles.selectBlock}>
             <div
                 onClick={visibilityHandler}
-                className={styles.title}
+                className={`${styles.title} ${props.classNameTitle}`}
             >
-                {props.title} {visibility ? <span>&#215;</span> : <span>&#8659;</span>}
+                {props.title}{visibility ? <span>&#215;</span> : <span>&#8659;</span>}
             </div>
             {visibility
-                ? <div className={styles.menu}>
+                ? <div className={`${styles.menu} ${props.classNameMenu}`}>
                     {props.array.map((el, index) => {
                         return (
                             <div

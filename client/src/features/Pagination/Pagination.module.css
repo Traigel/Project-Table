@@ -1,0 +1,23 @@
+.pagination {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+span {
+    margin: 0 5px;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.title {
+    width: 50px;
+    padding: 0;
+}
+
+.menu {
+    width: 50px;
+    padding: 0;
+}

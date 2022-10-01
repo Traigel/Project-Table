@@ -1,5 +1,5 @@
-import {dataApi, DataType, ResponseType} from "../../api/api";
-import {AppThunk} from "../../common/types/types";
+import {dataApi, DataType, ResponseType, SortType} from "../../api/api";
+import {AppRootStateType, AppThunk} from "../../common/types/types";
 import {errorHandlerUtil} from "../../common/utils/errors-utils";
 import {setAppStatusAC} from "../../app/app-reducer";
 
@@ -25,10 +25,12 @@ export const getDataTableAC = (data: ResponseType) => {
 }
 
 // thunks
-export const getDataTableTC = (): AppThunk => async (dispatch) => {
+export const getDataTableTC = (data: SortType): AppThunk => async (dispatch, getState: () => AppRootStateType) => {
     dispatch(setAppStatusAC('loading'))
+    // const page = getState().data.page
+    // const pageCount = getState().data.pageCount
     try {
-        const res = await dataApi.getData()
+        const res = await dataApi.getData(data)
         dispatch(getDataTableAC(res.data))
     } catch (e) {
         errorHandlerUtil(e, dispatch)

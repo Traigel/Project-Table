@@ -1,6 +1,6 @@
 const initialState = {
-    valueColumn: 'Column selection' as ValueSortType,
-    valueCondition: 'Condition selection' as ValueSortType,
+    valueColumn: 'Column selection' as ValueColumnType,
+    valueCondition: 'Condition selection' as ValueConditionType,
     valueInput: ''
 }
 
@@ -20,10 +20,10 @@ export const sortingReducer = (state = initialState, action: SortActionType): In
 }
 
 // actions
-export const setValueColumnAC = (value: ValueSortType) => {
+export const setValueColumnAC = (value: ValueColumnType) => {
     return {type: 'SORT/SET-VALUE-COLUMN', value} as const
 }
-export const setValueConditionAC = (value: ValueSortType) => {
+export const setValueConditionAC = (value: ValueConditionType) => {
     return {type: 'SORT/SET-VALUE-CONDITION', value} as const
 }
 export const setValueInputAC = (value: string) => {
@@ -42,4 +42,3 @@ export type SortActionType =
     | ReturnType<typeof resetSettingsAC>
 export type ValueColumnType = 'Column selection' | 'Title' | 'Quantity' | 'Distance'
 export type ValueConditionType = 'Condition selection' | 'Equals =' | 'Contains...' | 'More >' | 'Less <'
-export type ValueSortType = ValueColumnType | ValueConditionType

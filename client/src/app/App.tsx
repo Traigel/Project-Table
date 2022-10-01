@@ -5,6 +5,7 @@ import styles from "./App.module.css"
 import {Sorting} from "../features/Sorting/Sorting";
 import {Preloader} from "../common/components/Preloader/Preloader";
 import {useAppSelector} from "../common/hooks/useAppSelector";
+import {Pagination} from "../features/Pagination/Pagination";
 
 export const App = () => {
 
@@ -15,7 +16,7 @@ export const App = () => {
             {status === 'loading' && <Preloader/>}
             <Sorting/>
             <DataTable/>
-
+            <Pagination/>
         </div>
     )
 }

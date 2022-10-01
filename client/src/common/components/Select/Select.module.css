@@ -2,6 +2,7 @@
     position: relative;
     display: inline-block;
     margin: 0 5px;
+    width: 160px;
 }
 
 .title {
@@ -17,7 +18,7 @@
 
 .title span {
     position: absolute;
-    right: 5px;
+    right: 1px;
 }
 
 .menu {
